@@ -1,7 +1,7 @@
 import { ContainerStyled } from './components/Container-style';
 import { GlobalStyled } from './components/Global-style';
 import { PhotoStyled } from './components/Photo-style';
-import { CurrencyStyled, NameDataStyled, NameStyled, DataStyled } from './components/Currency-style';
+import { CurrencyStyled, NameDataStyled, NameStyled, DataStyled, LineNameStyled } from './components/Currency-style';
 import moment from 'moment';
 
 export const  App = () =>  {
@@ -15,7 +15,11 @@ export const  App = () =>  {
       <CurrencyStyled>
         <NameDataStyled>
           <NameStyled>
-            converter
+            <div>converter</div> 
+            <LineNameStyled>
+              <div></div>
+              <p>currency</p>
+            </LineNameStyled>
           </NameStyled>
           <DataStyled>
             <p>

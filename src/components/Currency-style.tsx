@@ -24,14 +24,42 @@ color: rgba(0,168,104,var(--tw-text-opacity));
 }
 `
 
+export const LineNameStyled = styled.div `
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    div {
+        background-color: rgba(0,168,104,var(--tw-text-opacity));
+        width: 11.5rem;
+        height: 0.5rem;
+        border-radius: 10px;
+        margin: 1rem 0.5rem 0 0;
+    };
+    p{
+        font-size: 2rem;
+    }
+
+    @media screen and (min-width: 300px) and (max-width: 1400px){
+        div {
+            width: 8.5rem;
+            height: 0.5rem;
+            margin: 0.5rem 0.5rem 0 0;
+        };
+        p{
+            font-size: 1.2rem;
+        }
+    }
+
+`
+
 export const DataStyled = styled.div `
  font-size: 1rem;
- padding-top: 1.4rem;
+ padding-top: 2.5rem;
  font-family: 'roboto';
  margin-Left: 2rem;
 
  @media screen and (min-width: 300px) and (max-width: 1400px){
     font-size: 0.9rem;
-    padding-top: 1.5rem;
+    padding-top: 1.6rem;
 }
 `
