@@ -35,7 +35,7 @@ export const LineNameStyled = styled.div `
     div {
         background-color: rgba(0,168,104,var(--tw-text-opacity));
         width: 11.5rem;
-        height: 0.5rem;
+        height: 0.3rem;
         border-radius: 10px;
         margin: 1rem 0.5rem 0 0;
     };
@@ -46,7 +46,7 @@ export const LineNameStyled = styled.div `
     @media screen and (min-width: 300px) and (max-width: 1400px){
         div {
             width: 8.5rem;
-            height: 0.5rem;
+            height: 0.3rem;
             margin: 0.5rem 0.5rem 0 0;
         };
         p{
