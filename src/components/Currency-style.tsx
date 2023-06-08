@@ -86,3 +86,29 @@ export const DataStyled = styled.div `
         margin-Left: 0;
     }
 `
+
+export const ContainerConverter = styled.div `
+   
+`
+
+export const MoneyConverter = styled.div `
+    display: flex;
+    flex-direction: column;
+    margin-top: 3rem;
+
+    p {
+        font-size: 1.2rem;
+        margin-right: 5.5rem;
+        margin-bottom: 0.5rem;
+        font-weight: bold;
+    }
+
+    input {
+        width: 9rem;
+        height: 2.3rem;
+        background-color: #EBEBEB;
+        border-radius: 0.35rem;
+        border: 1px solid #A1A1A1;
+        outline: 0;
+    }
+`

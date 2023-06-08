@@ -1,7 +1,7 @@
 import { ContainerStyled } from './components/Container-style';
 import { GlobalStyled } from './components/Global-style';
 import { PhotoStyled } from './components/Photo-style';
-import { CurrencyStyled, NameDataStyled, NameStyled, DataStyled, LineNameStyled } from './components/Currency-style';
+import { CurrencyStyled, NameDataStyled, NameStyled, DataStyled, LineNameStyled, ContainerConverter, MoneyConverter } from './components/Currency-style';
 
 
 export const  App = () =>  {
@@ -34,8 +34,13 @@ export const  App = () =>  {
             <p>Dados disponibilizados pela Morningstar.</p>
           </DataStyled>
         </NameDataStyled>
-        {/* <div>Teste2</div>
-        <div>Teste3</div> */}
+        <ContainerConverter>
+          <MoneyConverter>
+            <p>Dólar:</p>
+            <input type="number" name='Money' placeholder='$0.00'/>
+          </MoneyConverter>
+        </ContainerConverter>
+        {/* <div>Teste3</div> */}
       </CurrencyStyled>
       <PhotoStyled>
         <img src="../public/money.webp" alt="Imagem de dinheiro" />
