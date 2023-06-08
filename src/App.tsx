@@ -11,6 +11,7 @@ import {
   MoneyConverter,
   ButtonConverter } 
   from './components/Currency-style';
+  import { VscArrowSwap } from 'react-icons/vsc';
 
 
 export const  App = () =>  {
@@ -49,6 +50,7 @@ export const  App = () =>  {
             <input type="number" name='Money' placeholder='$0.00'/>
           </MoneyConverter>
           <ButtonConverter>
+            <VscArrowSwap style={{color: "white"}}/>
             <p>Converter</p>
           </ButtonConverter>
         </ContainerConverter>

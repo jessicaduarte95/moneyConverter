@@ -116,11 +116,15 @@ export const MoneyConverter = styled.div `
 `
 
 export const ButtonConverter = styled.button `
-    height: 2.3rem;
-    width: 6rem;
+    height: 2.5rem;
+    width: 6.5rem;
     background-color: #7E818B;
     border-radius: 0.35rem;
     border: 1px solid green;
+    margin-Top: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     
     :hover {
         background-color: #9698A0;
@@ -128,5 +132,6 @@ export const ButtonConverter = styled.button `
 
     p {
         color: #fff;
+        margin-Left: 0.5rem
     }
 `
