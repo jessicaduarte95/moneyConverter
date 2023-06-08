@@ -4,16 +4,15 @@ export const CurrencyStyled = styled.div `
     width: 50%;
     padding: 50px;
 
-    @media screen and (max-width: 600px){
-        width: 300%;
+    @media screen and (max-width: 800px){
+        width: 100%;
     }
 `
 
 export const NameDataStyled = styled.div `
     display: flex;
-    height: 28%;
 
-    @media screen and (max-width: 600px){
+    @media screen and (max-width: 800px){
         flex-direction: column;
     }
 `
@@ -26,11 +25,15 @@ export const NameStyled = styled.div `
     @media screen and (max-width: 1400px){
         font: bolder 3.5rem "Fira Sans", serif;
     }
+
+    @media screen and (max-width: 800px){
+        font-size: 2.5rem
+    }
 `
 
 export const LineNameStyled = styled.div `
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: flex-start;
     div {
         background-color: rgba(0,168,104,var(--tw-text-opacity));
@@ -43,7 +46,8 @@ export const LineNameStyled = styled.div `
         font-size: 2rem;
     }
 
-    @media screen and (min-width: 300px) and (max-width: 1400px){
+    @media screen and (max-width: 1400px){
+        justify-content: center;
         div {
             width: 8.5rem;
             height: 0.3rem;
@@ -51,6 +55,17 @@ export const LineNameStyled = styled.div `
         };
         p{
             font-size: 1.2rem;
+        }
+    }
+
+    @media screen and (max-width: 800px){
+        justify-content: flex-start;
+        div {
+            width: 5.5rem;
+            margin-left: 0.3rem;
+        }
+        p {
+            font-size: 1rem;
         }
     }
 
@@ -67,7 +82,7 @@ export const DataStyled = styled.div `
         padding-top: 1.6rem;
     }
 
-    @media screen and (max-width: 600px){
+    @media screen and (max-width: 800px){
         margin-Left: 0;
     }
 `
