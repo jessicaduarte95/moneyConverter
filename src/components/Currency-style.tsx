@@ -110,5 +110,23 @@ export const MoneyConverter = styled.div `
         border-radius: 0.35rem;
         border: 1px solid #A1A1A1;
         outline: 0;
+        box-shadow: 5px 5px 5px #C3C3C3;
+        padding: 0.5rem
+    }
+`
+
+export const ButtonConverter = styled.button `
+    height: 2.3rem;
+    width: 6rem;
+    background-color: #7E818B;
+    border-radius: 0.35rem;
+    border: 1px solid green;
+    
+    :hover {
+        background-color: #9698A0;
+    }
+
+    p {
+        color: #fff;
     }
 `

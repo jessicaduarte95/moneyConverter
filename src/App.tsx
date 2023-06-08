@@ -1,7 +1,16 @@
 import { ContainerStyled } from './components/Container-style';
 import { GlobalStyled } from './components/Global-style';
 import { PhotoStyled } from './components/Photo-style';
-import { CurrencyStyled, NameDataStyled, NameStyled, DataStyled, LineNameStyled, ContainerConverter, MoneyConverter } from './components/Currency-style';
+import { 
+  CurrencyStyled, 
+  NameDataStyled, 
+  NameStyled, 
+  DataStyled, 
+  LineNameStyled, 
+  ContainerConverter, 
+  MoneyConverter,
+  ButtonConverter } 
+  from './components/Currency-style';
 
 
 export const  App = () =>  {
@@ -39,6 +48,9 @@ export const  App = () =>  {
             <p>Dólar:</p>
             <input type="number" name='Money' placeholder='$0.00'/>
           </MoneyConverter>
+          <ButtonConverter>
+            <p>Converter</p>
+          </ButtonConverter>
         </ContainerConverter>
         {/* <div>Teste3</div> */}
       </CurrencyStyled>
