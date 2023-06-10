@@ -135,3 +135,12 @@ export const ButtonConverter = styled.button `
         margin-Left: 0.5rem
     }
 `
+
+export const TypeMoney = styled.div `
+    margin-Top: 1.3rem;
+
+    p {
+        font-size: 1.2rem;
+        font-weight: bold;
+    }
+`
