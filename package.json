@@ -11,9 +11,11 @@
     "test": "jest --watchAll"
   },
   "dependencies": {
-    "moment": "^2.29.4",
+    "@djthoms/pretty-checkbox": "^3.1.0",
+    "@emotion/react": "^11.11.1",
+    "@emotion/styled": "^11.11.0",
+    "@mui/material": "^5.13.4",
     "momentjs": "^2.0.0",
-    "pretty-checkbox": "^3.0.3",
     "pretty-checkbox-react": "^3.2.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",

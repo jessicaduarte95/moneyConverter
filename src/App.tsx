@@ -10,10 +10,11 @@ import {
   ContainerConverter, 
   MoneyConverter,
   ButtonConverter,
-  TypeMoney } 
+  TypeMoney, 
+  CheckboxStyeld } 
   from './components/Currency-style';
   import { VscArrowSwap } from 'react-icons/vsc';
-
+  import UseRadioGroup from './components/checkbox'
 
 export const  App = () =>  {
 
@@ -52,13 +53,15 @@ export const  App = () =>  {
           </MoneyConverter>
           <TypeMoney>
             <p>Tipo de Compra</p>
+            <CheckboxStyeld>
+              <UseRadioGroup/>
+            </CheckboxStyeld>
           </TypeMoney>
           <ButtonConverter>
             <VscArrowSwap style={{color: "white"}}/>
             <p>Converter</p>
           </ButtonConverter>
         </ContainerConverter>
-        {/* <div>Teste3</div> */}
       </CurrencyStyled>
       <PhotoStyled>
         <img src="../public/money.webp" alt="Imagem de dinheiro" />

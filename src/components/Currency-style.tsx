@@ -121,7 +121,7 @@ export const ButtonConverter = styled.button `
     background-color: #7E818B;
     border-radius: 0.35rem;
     border: 1px solid green;
-    margin-Top: 2rem;
+    margin-Top: 1.5rem;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -143,4 +143,10 @@ export const TypeMoney = styled.div `
         font-size: 1.2rem;
         font-weight: bold;
     }
+`
+
+export const CheckboxStyeld = styled.div `
+    display: flex;
+    margin-Top: 1rem;
+
 `
