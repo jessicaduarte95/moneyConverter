@@ -61,7 +61,7 @@ export const  App = () =>  {
   const currentYear = date.getFullYear();
   const hours = date.getHours() ;
   const minutes = date.getMinutes();
-  const { register, handleSubmit, reset, getValues } = useForm<IFormInput>();
+  const { register, handleSubmit, reset } = useForm<IFormInput>();
 
   const onSubmit: SubmitHandler<IFormInput> = (data) => {
     console.log('Teste', data)
