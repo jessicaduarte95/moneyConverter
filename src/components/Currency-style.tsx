@@ -182,6 +182,7 @@ export const ResultStyeld = styled.p `
 
 export const ResultMoneyStyeld = styled.p `
     margin-top: 1rem;
+    margin-bottom: 2rem;
     font-size: 2rem;
     font-family: "Fira Sans", serif;
     --tw-text-opacity: 1;
@@ -189,7 +190,7 @@ export const ResultMoneyStyeld = styled.p `
 `
 
 export const ResultCompraStyeld = styled.p `
-    margin-top: 2rem;
+    margin-top: 1rem;
     font-size: 0.9rem;
     font-weight: bold;
     color: #353535;

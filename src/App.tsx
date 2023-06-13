@@ -126,6 +126,7 @@ export const  App = () =>  {
               <ResultStyeld>O resultado do cálculo é</ResultStyeld>
               <ResultMoneyStyeld>R$ 526,00</ResultMoneyStyeld>
               <ResultCompraStyeld>Compra no dinheiro</ResultCompraStyeld>
+              <ResultCompraStyeld>Cotação do dólar: </ResultCompraStyeld>
            </ContainerResultStyeld>
           }
           
