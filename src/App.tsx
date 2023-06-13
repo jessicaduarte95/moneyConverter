@@ -11,14 +11,17 @@ import {
   MoneyConverter,
   ButtonConverter,
   TypeMoney, 
-  CheckboxStyeld } 
+  CheckboxStyeld,
+  ContainerResultStyeld,
+  ButtonResultStyeld } 
   from './components/Currency-style';
-  import { VscArrowSwap } from 'react-icons/vsc';
+  import { VscArrowSwap, VscArrowLeft } from 'react-icons/vsc';
   import { useForm, SubmitHandler } from "react-hook-form";
   import { styled } from '@mui/material/styles';
   import RadioGroup, { useRadioGroup } from '@mui/material/RadioGroup';
   import FormControlLabel, { FormControlLabelProps } from '@mui/material/FormControlLabel';
   import Radio from '@mui/material/Radio';
+  import { useState } from 'react';
 
   const StyledFormControlLabel = styled((props: StyledFormControlLabelProps) => (
     <FormControlLabel {...props} />
@@ -61,10 +64,12 @@ export const  App = () =>  {
   const currentYear = date.getFullYear();
   const hours = date.getHours() ;
   const minutes = date.getMinutes();
+  const [result, setResult] = useState<boolean>(false);
   const { register, handleSubmit, reset } = useForm<IFormInput>();
 
   const onSubmit: SubmitHandler<IFormInput> = (data) => {
     console.log('Teste', data)
+    setResult(true);
     reset()
   }
 
@@ -88,25 +93,36 @@ export const  App = () =>  {
           </DataStyled>
         </NameDataStyled>
         <form onSubmit={handleSubmit(onSubmit)}>
-          <ContainerConverter>
-            <MoneyConverter>
-              <p>Dólar:</p>
-              <input type="number" placeholder='$0.00' {...register("dolar")}/>
-            </MoneyConverter>
-            <TypeMoney>
-              <p>Tipo de Compra</p>
-              <CheckboxStyeld>
-                <RadioGroup {...register("typePay")} name="use-radio-group" defaultValue="dinheiro" style={{display: 'flex', flexDirection: 'row'}}>
-                  <MyFormControlLabel value="dinheiro" label="Dinheiro" control={<Radio style={{color: 'green'}} />} />
-                  <MyFormControlLabel value="cartao" label="Cartão" control={<Radio style={{color: 'green'}}/>} />
-                </RadioGroup>
-              </CheckboxStyeld>
-            </TypeMoney>
-            <ButtonConverter type="submit">
-              <VscArrowSwap style={{color: "white"}}/>
-              <p>Converter</p>
-            </ButtonConverter>
-          </ContainerConverter>
+          {
+            result === false ? 
+            <ContainerConverter>
+              <MoneyConverter>
+                <p>Dólar:</p>
+                <input type="number" placeholder='$0.00' {...register("dolar")}/>
+              </MoneyConverter>
+              <TypeMoney>
+                <p>Tipo de Compra</p>
+                <CheckboxStyeld>
+                  <RadioGroup {...register("typePay")} name="use-radio-group" defaultValue="dinheiro" style={{display: 'flex', flexDirection: 'row'}}>
+                    <MyFormControlLabel value="dinheiro" label="Dinheiro" control={<Radio style={{color: 'green'}} />} />
+                    <MyFormControlLabel value="cartao" label="Cartão" control={<Radio style={{color: 'green'}}/>} />
+                  </RadioGroup>
+                </CheckboxStyeld>
+              </TypeMoney>
+              <ButtonConverter type="submit">
+                <VscArrowSwap style={{color: "white"}}/>
+                <p>Converter</p>
+              </ButtonConverter>
+           </ContainerConverter>
+           : 
+           <ContainerResultStyeld>
+              <ButtonResultStyeld onClick={() => setResult(false)}>
+                <VscArrowLeft style={{color: "#575757"}}/>
+                <p>Voltar</p> 
+              </ButtonResultStyeld>
+           </ContainerResultStyeld>
+          }
+          
         </form>
       </CurrencyStyled>
       <PhotoStyled>

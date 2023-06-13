@@ -88,13 +88,12 @@ export const DataStyled = styled.div `
 `
 
 export const ContainerConverter = styled.div `
-   
+    margin-top: 3rem;
 `
 
 export const MoneyConverter = styled.div `
     display: flex;
     flex-direction: column;
-    margin-top: 3rem;
 
     p {
         font-size: 1.2rem;
@@ -149,4 +148,28 @@ export const CheckboxStyeld = styled.div `
     display: flex;
     margin-Top: 1rem;
 
+`
+
+export const ContainerResultStyeld = styled.div `
+    margin-top: 3rem;
+`
+
+export const ButtonResultStyeld = styled.button `
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 2.5rem;
+    width: 5.5rem;
+    border-radius: 0.35rem;
+    border: 1px solid #9698A0;
+    box-shadow: 3px 5px 5px #C3C3C3;
+
+    :hover {
+        background-color: #EAEAEA;
+    }
+    
+    p {
+        font-weight: bold;
+        margin-Left: 0.5rem
+    }
 `
