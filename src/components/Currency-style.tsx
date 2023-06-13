@@ -173,3 +173,24 @@ export const ButtonResultStyeld = styled.button `
         margin-Left: 0.5rem
     }
 `
+
+export const ResultStyeld = styled.p `
+    margin-top: 2rem;
+    font-size: 1.1rem;
+    font-weight: bold;
+`
+
+export const ResultMoneyStyeld = styled.p `
+    margin-top: 1rem;
+    font-size: 2rem;
+    font-family: "Fira Sans", serif;
+    --tw-text-opacity: 1;
+    color: rgba(0,168,104,var(--tw-text-opacity));
+`
+
+export const ResultCompraStyeld = styled.p `
+    margin-top: 2rem;
+    font-size: 0.9rem;
+    font-weight: bold;
+    color: #353535;
+`

@@ -13,7 +13,10 @@ import {
   TypeMoney, 
   CheckboxStyeld,
   ContainerResultStyeld,
-  ButtonResultStyeld } 
+  ButtonResultStyeld,
+  ResultStyeld,
+  ResultMoneyStyeld,
+  ResultCompraStyeld } 
   from './components/Currency-style';
   import { VscArrowSwap, VscArrowLeft } from 'react-icons/vsc';
   import { useForm, SubmitHandler } from "react-hook-form";
@@ -120,6 +123,9 @@ export const  App = () =>  {
                 <VscArrowLeft style={{color: "#575757"}}/>
                 <p>Voltar</p> 
               </ButtonResultStyeld>
+              <ResultStyeld>O resultado do cálculo é</ResultStyeld>
+              <ResultMoneyStyeld>R$ 526,00</ResultMoneyStyeld>
+              <ResultCompraStyeld>Compra no dinheiro</ResultCompraStyeld>
            </ContainerResultStyeld>
           }
           
