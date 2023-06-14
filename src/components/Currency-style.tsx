@@ -4,7 +4,7 @@ export const CurrencyStyled = styled.div `
     width: 50%;
     padding: 50px;
 
-    @media screen and (max-width: 800px){
+    @media screen and (max-width: 1000px){
         width: 100%;
     }
 `
@@ -89,6 +89,12 @@ export const DataStyled = styled.div `
 
 export const ContainerConverter = styled.div `
     margin-top: 6rem;
+
+    @media screen and (max-width: 1000px){
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
 `
 
 export const MoneyConverter = styled.div `
