@@ -129,7 +129,7 @@ export const ButtonConverter = styled.button `
     justify-content: center;
     
     :hover {
-        background-color: #9698A0;
+        background-color: #A4B1C0;
     }
 
     p {
