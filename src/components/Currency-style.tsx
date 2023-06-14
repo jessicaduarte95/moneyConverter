@@ -96,31 +96,34 @@ export const MoneyConverter = styled.div `
     flex-direction: column;
 
     p {
-        font-size: 1.2rem;
+        font-size: 1.1rem;
         margin-right: 5.5rem;
         margin-bottom: 0.5rem;
-        font-weight: bold;
+        font-style: normal;
+        font-weight: 540;
+        line-height: 21px;
+        color: rgb(46, 55, 66);
     }
 
     input {
-        width: 9rem;
-        height: 2.3rem;
-        background-color: #EBEBEB;
+        width: 10.5rem;
+        height: 3rem;
+        background-color: #fff;
         border-radius: 0.35rem;
-        border: 1px solid #A1A1A1;
+        border: 1px solid #E3E0E0;
         outline: 0;
-        box-shadow: 5px 5px 5px #C3C3C3;
+        box-shadow: 5px 5px 5px #EBEBEB;
         padding: 0.5rem
     }
 `
 
 export const ButtonConverter = styled.button `
-    height: 2.5rem;
-    width: 6.5rem;
-    background-color: #7E818B;
+    height: 3.4rem;
+    width: 8rem;
+    background-color: rgb(140, 156, 173);
     border-radius: 0.35rem;
     border: 1px solid green;
-    margin-Top: 1.5rem;
+    margin-Top: 2.3rem;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -131,22 +134,26 @@ export const ButtonConverter = styled.button `
 
     p {
         color: #fff;
-        margin-Left: 0.5rem
+        margin-Left: 0.5rem;
+        font-size: 1rem;
     }
 `
 
 export const TypeMoney = styled.div `
-    margin-Top: 1.3rem;
+    margin-Top: 1.8rem;
 
     p {
-        font-size: 1.2rem;
-        font-weight: bold;
+        font-size: 1.1rem;
+        font-style: normal;
+        font-weight: 540;
+        line-height: 21px;
+        color: rgb(46, 55, 66);
     }
 `
 
 export const CheckboxStyeld = styled.div `
     display: flex;
-    margin-Top: 1rem;
+    margin-Top: 1.3rem;
 
 `
 

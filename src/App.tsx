@@ -124,7 +124,7 @@ export const  App = () =>  {
                 </CheckboxStyeld>
               </TypeMoney>
               <ButtonConverter type="submit">
-                <VscArrowSwap style={{color: "white"}}/>
+                <VscArrowSwap style={{color: "white", fontSize: "1rem"}}/>
                 <p>Converter</p>
               </ButtonConverter>
            </ContainerConverter>
