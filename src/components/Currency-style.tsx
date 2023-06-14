@@ -88,7 +88,7 @@ export const DataStyled = styled.div `
 `
 
 export const ContainerConverter = styled.div `
-    margin-top: 3rem;
+    margin-top: 6rem;
 `
 
 export const MoneyConverter = styled.div `
