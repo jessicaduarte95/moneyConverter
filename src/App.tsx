@@ -144,7 +144,7 @@ export const  App = () =>  {
         </form>
       </CurrencyStyled>
       <PhotoStyled>
-        <img src="../public/money.webp" alt="Imagem de dinheiro" />
+        <img src="../money.webp" alt="Imagem de dinheiro" />
       </PhotoStyled>
     </ContainerStyled>
   )
