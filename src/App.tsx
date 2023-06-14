@@ -24,7 +24,8 @@ import {
   import RadioGroup, { useRadioGroup } from '@mui/material/RadioGroup';
   import FormControlLabel, { FormControlLabelProps } from '@mui/material/FormControlLabel';
   import Radio from '@mui/material/Radio';
-  import { useState } from 'react';
+  import { useEffect, useState } from 'react';
+  import axios from 'axios';
 
   const StyledFormControlLabel = styled((props: StyledFormControlLabelProps) => (
     <FormControlLabel {...props} />
@@ -75,6 +76,14 @@ export const  App = () =>  {
     setResult(true);
     reset()
   }
+  
+  useEffect(() => {
+    axios.get('https://economia.awesomeapi.com.br/last/USD-BRL')
+    .then((response) => {
+      console.log('response', response.data.USDBRL)
+    })
+    .catch(error => console.log('Erro: ', error))
+  })
 
   return (
     <ContainerStyled>
