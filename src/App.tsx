@@ -69,21 +69,23 @@ export const  App = () =>  {
   const hours = date.getHours() ;
   const minutes = date.getMinutes();
   const [result, setResult] = useState<boolean>(false);
+  const [dataCotacao, setDataCotacao] = useState<{}>({});
   const { register, handleSubmit, reset } = useForm<IFormInput>();
 
   const onSubmit: SubmitHandler<IFormInput> = (data) => {
-    console.log('Teste', data)
+    axios.get('https://economia.awesomeapi.com.br/last/USD-BRL')
+    .then((response) => {
+      console.log('response', response.data.USDBRL)
+      setDataCotacao(response.data.USDBRL)
+    })
+    .catch(error => console.log('Erro: ', error))
     setResult(true);
     reset()
   }
   
   useEffect(() => {
-    axios.get('https://economia.awesomeapi.com.br/last/USD-BRL')
-    .then((response) => {
-      console.log('response', response.data.USDBRL)
-    })
-    .catch(error => console.log('Erro: ', error))
-  })
+    console.log('dataCotacao', dataCotacao)
+  }, [dataCotacao])
 
   return (
     <ContainerStyled>
@@ -133,7 +135,7 @@ export const  App = () =>  {
                 <p>Voltar</p> 
               </ButtonResultStyeld>
               <ResultStyeld>O resultado do cálculo é</ResultStyeld>
-              <ResultMoneyStyeld>R$ 526,00</ResultMoneyStyeld>
+              <ResultMoneyStyeld>R$ </ResultMoneyStyeld>
               <ResultCompraStyeld>Compra no dinheiro</ResultCompraStyeld>
               <ResultCompraStyeld>Cotação do dólar: </ResultCompraStyeld>
            </ContainerResultStyeld>
