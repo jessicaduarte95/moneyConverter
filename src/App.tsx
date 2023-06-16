@@ -16,7 +16,8 @@ import {
   ButtonResultStyeld,
   ResultStyeld,
   ResultMoneyStyeld,
-  ResultCompraStyeld } 
+  ResultCompraStyeld,
+  TextStyled } 
   from './components/Currency-style';
   import { VscArrowSwap, VscArrowLeft } from 'react-icons/vsc';
   import { useForm, SubmitHandler } from "react-hook-form";
@@ -103,7 +104,7 @@ export const  App = () =>  {
             <p>
               {day} {monthOrganized} {currentYear} {"|"} {hours}{":"} {minutes}
             </p>
-            <p>Dados disponibilizados pela Morningstar.</p>
+            <TextStyled>Dados disponibilizados pela Morningstar.</TextStyled>
           </DataStyled>
         </NameDataStyled>
         <form onSubmit={handleSubmit(onSubmit)}>

@@ -72,14 +72,33 @@ export const LineNameStyled = styled.div `
 `
 
 export const DataStyled = styled.div `
-    font-size: 1rem;
     padding-top: 2.5rem;
-    font-family: 'roboto';
     margin-Left: 2rem;
+    font-size: 1.3rem;
+    font-style: normal;
+    font-weight: 540;
+    line-height: 21px;
+    color: rgb(46, 55, 66);
 
     @media screen and (max-width: 1400px){
-        font-size: 0.9rem;
+        font-size: 1rem;
         padding-top: 1.6rem;
+    }
+
+    @media screen and (max-width: 600px){
+        margin-Left: 0;
+    }
+`
+
+export const TextStyled = styled.p `
+    font-size: 1.2rem;
+    font-style: normal;
+    font-weight: 400;
+    color: rgb(140, 156, 173);
+    margin-Top: 0.2rem;
+
+    @media screen and (max-width: 1400px){
+        font-size: 1rem;
     }
 
     @media screen and (max-width: 600px){
