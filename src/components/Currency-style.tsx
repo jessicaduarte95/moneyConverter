@@ -12,7 +12,7 @@ export const CurrencyStyled = styled.div `
 export const NameDataStyled = styled.div `
     display: flex;
 
-    @media screen and (max-width: 800px){
+    @media screen and (max-width: 600px){
         flex-direction: column;
     }
 `
@@ -26,7 +26,7 @@ export const NameStyled = styled.div `
         font: bolder 3.5rem "Fira Sans", serif;
     }
 
-    @media screen and (max-width: 800px){
+    @media screen and (max-width: 600px){
         font-size: 2.5rem
     }
 `
@@ -58,7 +58,7 @@ export const LineNameStyled = styled.div `
         }
     }
 
-    @media screen and (max-width: 800px){
+    @media screen and (max-width: 600px){
         justify-content: flex-start;
         div {
             width: 5.5rem;
@@ -82,7 +82,7 @@ export const DataStyled = styled.div `
         padding-top: 1.6rem;
     }
 
-    @media screen and (max-width: 800px){
+    @media screen and (max-width: 600px){
         margin-Left: 0;
     }
 `
