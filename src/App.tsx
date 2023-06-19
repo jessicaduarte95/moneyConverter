@@ -71,11 +71,14 @@ export const  App = () =>  {
   const minutes = date.getMinutes();
   const [result, setResult] = useState<boolean>(false);
   const [dataCotacao, setDataCotacao] = useState<number>(0);
+  const [resultCalculation, setResultCalculation] = useState<number>(0);
   const { register, handleSubmit, reset } = useForm<IFormInput>();
 
   const onSubmit: SubmitHandler<IFormInput> = (data) => {
+  
     axios.get('https://economia.awesomeapi.com.br/last/USD-BRL')
     .then((response) => {
+      setResultCalculation(data.dolar * response.data.USDBRL.ask)
       setDataCotacao(response.data.USDBRL.ask)
     })
     .catch(error => console.log('Erro: ', error))
@@ -134,7 +137,7 @@ export const  App = () =>  {
                 <p>Voltar</p> 
               </ButtonResultStyeld>
               <ResultStyeld>O resultado do cálculo é</ResultStyeld>
-              <ResultMoneyStyeld>R$ </ResultMoneyStyeld>
+              <ResultMoneyStyeld>R$ {resultCalculation ? resultCalculation  : 0}</ResultMoneyStyeld>
               <ResultCompraStyeld>Compra no dinheiro</ResultCompraStyeld>
               <ResultCompraStyeld>Cotação do dólar: $1,00 = R$ {dataCotacao ? dataCotacao : 0}</ResultCompraStyeld>
            </ContainerResultStyeld>
