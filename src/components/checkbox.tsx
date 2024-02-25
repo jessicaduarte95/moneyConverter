@@ -4,22 +4,25 @@ import FormControlLabel, { FormControlLabelProps } from '@mui/material/FormContr
 import Radio from '@mui/material/Radio';
 
 interface StyledFormControlLabelProps extends FormControlLabelProps {
-  checked: boolean;
+  checked: boolean; 
+}
+
+interface FilhoProps {
+  setTypePay: React.Dispatch<React.SetStateAction<string>>;
 }
 
 const StyledFormControlLabel = styled((props: StyledFormControlLabelProps) => (
   <FormControlLabel {...props} />
-))(({ theme, checked }) => ({
+))(({ checked }) => ({
   '.MuiFormControlLabel-label': checked && {
-    // color: theme.palette.primary.main,
   },
 }));
 
-function MyFormControlLabel(props: FormControlLabelProps) {
+const MyFormControlLabel = (props: FormControlLabelProps) => {
   const radioGroup = useRadioGroup();
 
   let checked = false;
-
+  
   if (radioGroup) {
     checked = radioGroup.value === props.value;
   }
@@ -27,11 +30,14 @@ function MyFormControlLabel(props: FormControlLabelProps) {
   return <StyledFormControlLabel checked={checked} {...props} />;
 }
 
-export default function UseRadioGroup() {
+const UseRadioGroup: React.FC<FilhoProps> =  ({setTypePay}) => {
+ 
   return (
-    <RadioGroup name="use-radio-group" defaultValue="first" style={{display: 'flex', flexDirection: 'row'}}>
-      <MyFormControlLabel value="dinheiro" label="Dinheiro" control={<Radio style={{color: 'green'}} />} />
+    <RadioGroup name="use-radio-group" defaultValue="dinheiro" style={{display: 'flex', flexDirection: 'row'}}>
+      <MyFormControlLabel value="dinheiro" label="Dinheiro" control={<Radio style={{color: 'green'}}/>}/>
       <MyFormControlLabel value="cartao" label="Cartão" control={<Radio style={{color: 'green'}}/>} />
     </RadioGroup>
   );
 }
+
+export default UseRadioGroup;

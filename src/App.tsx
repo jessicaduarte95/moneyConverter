@@ -21,30 +21,14 @@ import {
   from './components/Currency-style';
   import { VscArrowSwap, VscArrowLeft } from 'react-icons/vsc';
   import { useForm, SubmitHandler } from "react-hook-form";
-  import { styled } from '@mui/material/styles';
-  import RadioGroup, { useRadioGroup } from '@mui/material/RadioGroup';
-  import FormControlLabel, { FormControlLabelProps } from '@mui/material/FormControlLabel';
-  import Radio from '@mui/material/Radio';
+  // import { styled } from '@mui/material/styles';
+  // import RadioGroup, { useRadioGroup } from '@mui/material/RadioGroup';
+  // import FormControlLabel, { FormControlLabelProps } from '@mui/material/FormControlLabel';
+  // import Radio from '@mui/material/Radio';
   import { useEffect, useState } from 'react';
   import axios from 'axios';
-
-  const StyledFormControlLabel = styled((props: StyledFormControlLabelProps) => (
-    <FormControlLabel {...props} />
-  ))(({ checked }) => ({
-    '.MuiFormControlLabel-label': checked 
-  }));
-  
-  function MyFormControlLabel(props: FormControlLabelProps) {
-    const radioGroup = useRadioGroup();
-  
-    let checked = false;
-  
-    if (radioGroup) {
-      checked = radioGroup.value === props.value;
-    }
-  
-    return <StyledFormControlLabel checked={checked} {...props} />;
-  }
+  import UseRadioGroup  from './components/checkbox';
+  import * as React from 'react';
 
   type Input = {
     dinheiro: string,
@@ -54,13 +38,19 @@ import {
   interface IFormInput {
     dolar: number,
     typePay: Input;
+    setTypePay: React.Dispatch<React.SetStateAction<string>>;
   }
 
-  interface StyledFormControlLabelProps extends FormControlLabelProps {
-    checked: boolean;
-  }
+  // interface StyledFormControlLabelProps extends FormControlLabelProps {
+  //   checked: boolean;
+  // }
 
-export const  App = () =>  {
+  // interface PaiProps {
+  //   setTypePay: React.Dispatch<React.SetStateAction<string>>;
+  // }
+  
+
+export const  App: React.FC = () =>  {
 
   const date = new Date()
   const day = date.getDate();
@@ -71,11 +61,31 @@ export const  App = () =>  {
   const minutes = date.getMinutes();
   const [result, setResult] = useState<boolean>(false);
   const [dataCotacao, setDataCotacao] = useState<number>(0);
+  const [typePay, setTypePay] = useState<string>('');
   const [resultCalculation, setResultCalculation] = useState<number>(0);
   const { register, handleSubmit, reset } = useForm<IFormInput>();
 
-  const onSubmit: SubmitHandler<IFormInput> = (data) => {
+  // const StyledFormControlLabel = styled((props: StyledFormControlLabelProps) => (
+  //   <FormControlLabel {...props} />
+  // ))(({ checked }) => ({
+  //   '.MuiFormControlLabel-label': checked 
+  // }));
   
+  // function MyFormControlLabel(props: FormControlLabelProps) {
+  //   const radioGroup = useRadioGroup();
+  //   const typeMoney = radioGroup ? radioGroup.value : '';
+  //   setTypePay(typeMoney)
+  //   let checked = false;
+  
+  //   if (radioGroup) {
+  //     checked = radioGroup.value === props.value;
+  //   }
+  
+  //   return <StyledFormControlLabel checked={checked} {...props} />;
+  // }
+
+  const onSubmit: SubmitHandler<IFormInput> = (data) => {
+    console.log('typePay: ', typePay)
     axios.get('https://economia.awesomeapi.com.br/last/USD-BRL')
     .then((response) => {
       setResultCalculation(data.dolar * response.data.USDBRL.ask)
@@ -119,10 +129,11 @@ export const  App = () =>  {
               <TypeMoney>
                 <p>Tipo de Compra</p>
                 <CheckboxStyeld>
-                  <RadioGroup {...register("typePay")} name="use-radio-group" defaultValue="dinheiro" style={{display: 'flex', flexDirection: 'row'}}>
+                  <UseRadioGroup setTypePay={setTypePay}/>
+                  {/* <RadioGroup {...register("typePay")} name="use-radio-group" defaultValue="dinheiro" style={{display: 'flex', flexDirection: 'row'}}>
                     <MyFormControlLabel value="dinheiro" label="Dinheiro" control={<Radio style={{color: 'green'}} />} />
                     <MyFormControlLabel value="cartao" label="Cartão" control={<Radio style={{color: 'green'}}/>} />
-                  </RadioGroup>
+                  </RadioGroup> */}
                 </CheckboxStyeld>
               </TypeMoney>
               <ButtonConverter type="submit">
